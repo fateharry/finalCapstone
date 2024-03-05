@@ -404,30 +404,33 @@ ds - Display statistics
 e - Exit
 ******************************************************************************
 : ''').lower()
+    match menu:
 
-    if menu == 'r':
-        # Add a new user to the user.txt file
-        user_reg()
+      case 'r':
+          # Add a new user to the user.txt file
+          user_reg()
 
-    elif menu == 'a':
-        add_task()
+      case 'a':
+          add_task()
 
-    elif menu == 'va':
-        view_all()
+      case 'va':
+          view_all()
 
-    elif menu == 'vm':
-        view_mine()
+      case 'vm':
+          view_mine()
 
-    elif menu == 'gr' and curr_user == 'admin':
-        generate_reports(task_list)
+      case 'gr': 
+        if curr_user == 'admin':
+          generate_reports(task_list)
 
-    elif menu == 'ds' and curr_user == 'admin':
-        display_statistics()
+      case 'ds': 
+        if curr_user == 'admin':
+          display_statistics()
 
-    elif menu == 'e':
-        print('\nExiting the program now..Goodbye!')
-        print('-'*60)
-        exit()
+      case 'e':
+          print('\nExiting the program now..Goodbye!')
+          print('-'*60)
+          exit()
 
-    else:
-        print("You have made a wrong choice, Please Try again")
+      case _:
+          print("You have made a wrong choice, Please Try again")

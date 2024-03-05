@@ -178,6 +178,11 @@ def view_all():
            format of Output 2 presented in the task pdf (i.e. includes spacing
            and labelling)
     """
+    task_number = len(task_list)
+    if task_number == 0:
+        print("Sorry, there is no task to display at this time")
+        return
+    
     for t in task_list:
         disp_str = f"    Task: \t\t {t['title']}\n"
         disp_str += f"   Assigned to: \t {t['username']}\n"

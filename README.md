@@ -1,4 +1,4 @@
-**Task Management System**
+# Task Management System
 
 This is a task management system written in Python. It allows users to add, view, edit, and mark tasks as complete. It also offers functionalities for user registration, generating reports, and displaying statistics (for admins).
 
